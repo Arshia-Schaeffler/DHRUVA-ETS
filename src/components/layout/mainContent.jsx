@@ -1,42 +1,16 @@
-// import React from 'react';
-// import { Outlet } from 'react-router-dom';
-
-// const drawerWidth = 240; // Sidebar width in px
-
-// const MainContent = ({ open, children }) => {
-//   return (
-//     <main
-//       className={`min-h-screen transition-all duration-300 bg-gray-50 px-6 py-4
-//         ${open ? 'ml-[240px]' : 'ml-0'}
-//       `}
-//     >
-//       {/* Toolbar spacer (simulate AppBar height if needed) */}
-//       <div className="h-16" />
-
-//       {/* Page Content */}
-//       <div className="w-full max-w-7xl mx-auto">
-//         <Outlet />
-//         {children}
-//       </div>
-//     </main>
-//   );
-// };
-
-// export default MainContent;
-
-
 import React from "react";
 import { Outlet } from "react-router-dom";
 
 const MainContent = ({ open, darkMode, children }) => {
   return (
     <main
-      className={`min-h-screen transition-all duration-300 px-6 py-4 ${
-        open ? "ml-[240px]" : "ml-0"
-      } ${darkMode ? "bg-gray-900 text-white" : "bg-gray-50 text-gray-800"}`}
+      className={`
+        min-h-screen transition-all duration-300 px-6 pt-20
+        ${open ? "ml-[240px]" : "ml-[64px]"}
+        ${darkMode ? "bg-gray-900 text-white" : "bg-gray-50 text-gray-800"}
+      `}
     >
-      <div className="h-16" />
-      <div className="w-full max-w-7xl mx-auto">
+      <div className="w-full">
         <Outlet />
         {children}
       </div>
@@ -45,3 +19,5 @@ const MainContent = ({ open, darkMode, children }) => {
 };
 
 export default MainContent;
+
+

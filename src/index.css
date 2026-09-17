@@ -1,7 +1,157 @@
+
+/* React Big Calendar default styles */
+@import "react-big-calendar/lib/css/react-big-calendar.css";
+
+/* /* Tailwind directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
+/* Global body styling */
 body {
-  @apply bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white;
+  @apply bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white antialiased leading-relaxed tracking-normal;
 }
+
+/* SweetAlert custom green button (Schaeffler-themed) */
+.swal-custom-btn {
+  background-color: #22c55e !important; /* Tailwind green-500 */
+  color: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 8px 20px !important;
+  font-weight: 600 !important;
+  font-family: inherit !important;
+  box-shadow: 0 4px 10px rgba(34, 197, 94, 0.3) !important;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.swal-custom-btn:hover {
+  background-color: #16a34a !important; /* Tailwind green-600 */
+  transform: translateY(-1px);
+}
+
+/* Optional: Custom styles for react-big-calendar */
+.rbc-calendar {
+  font-family: 'Inter', sans-serif;
+}
+
+.rbc-toolbar {
+  @apply bg-green-600 text-white rounded-md shadow-md p-4 mb-4 flex flex-col md:flex-row md:justify-between md:items-center;
+}
+
+.rbc-toolbar-label {
+  @apply text-lg font-bold;
+}
+
+.rbc-btn-group button {
+  @apply bg-white text-green-700 hover:bg-green-100 font-semibold rounded px-3 py-1 transition shadow-sm;
+}
+
+.rbc-active {
+  @apply bg-green-100 text-green-700;
+}
+
+.rbc-month-view,
+.rbc-agenda-view,
+.rbc-time-view {
+  @apply bg-white dark:bg-gray-800;
+}
+
+.rbc-day-bg.rbc-today {
+  @apply bg-green-50;
+}
+
+.rbc-event {
+  @apply bg-green-500 text-white font-medium rounded px-1 shadow-sm;
+}
+
+.rbc-event:hover {
+  @apply bg-green-600;
+}
+
+/* Ensure datepicker appears above cards but below popups */
+.react-datepicker-popper {
+  z-index: 50 !important;
+}
+
+.modal-overlay {
+  z-index: 100 !important;
+}
+
+.modal-content {
+  z-index: 110 !important;
+}
+
+
+.filter-container {
+  overflow: visible !important;
+  position: relative;
+  z-index: 10;
+}
+
+
+
+/* Autofill fix */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  -webkit-text-fill-color: #1f2937 !important; /* Tailwind's gray-800 */
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafb;
+}
+
+button, .hoverable {
+  transition: all 0.2s ease-in-out;
+}
+
+.datepicker-popper {
+  z-index: 40 !important; /* below modals/navbar */
+}
+
+.react-datepicker {
+  font-family: inherit !important;
+  border-radius: 0.5rem !important;
+  border: 1px solid #d1d5db !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08) !important;
+}
+
+.dark .react-datepicker {
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+  color: #fff !important;
+}
+
+.dark .react-datepicker__day-name,
+.dark .react-datepicker__day,
+.dark .react-datepicker__current-month {
+  color: #e5e7eb !important;
+}
+
+.dark .react-datepicker__day--selected,
+.dark .react-datepicker__day--keyboard-selected {
+  background-color: #16a34a !important;
+  color: white !important;
+}
+
+/* FullCalendar top toolbar buttons */
+.fc .fc-toolbar button {
+  @apply bg-green-600 text-white rounded-md px-3 py-1 font-medium shadow-sm hover:bg-green-700 transition;
+}
+
+/* Today button special style optional */
+.fc .fc-toolbar button.fc-today-button {
+  @apply bg-gray-800 hover:bg-gray-900;
+}
+
+/* Active tab (month/week/day/list) */
+.fc .fc-button-active {
+  @apply bg-green-700 !important;
+}
+
+/* Calendar header title style */
+.fc .fc-toolbar-title {
+  @apply text-xl font-semibold text-gray-800;
+}
+

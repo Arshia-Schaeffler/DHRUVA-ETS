@@ -1,0 +1,16 @@
+.rbc-toolbar {
+  display: none !important; /* hide default toolbar */
+}
+
+.rbc-event {
+  font-size: 14px;
+  padding: 4px 6px;
+}
+
+.rbc-today {
+  background-color: #fef9c3 !important; /* Tailwind yellow-100 */
+}
+
+.rbc-agenda-view table.rbc-agenda-table td {
+  font-size: 14px;
+}
